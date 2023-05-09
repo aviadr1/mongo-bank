@@ -1,8 +1,12 @@
+print('starting')
+
 # https://www.mongodb.com/try/download/community-kubernetes-operator
 from mongoengine import Document, StringField, connect
 
+print('connecting to mongo')
 connect(host="mongodb://localhost:27017/bank")
 
+print('mongo connected')
 
 class User(Document):
     email = StringField(required=True)
@@ -19,6 +23,6 @@ else:
 print(user.id, user.email, type(user))
 
 # exercise: create a class for Dog or Account and create one object
-
+print('done!')
 
 
