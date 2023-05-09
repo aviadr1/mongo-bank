@@ -4,7 +4,12 @@ print('starting')
 from mongoengine import Document, StringField, connect
 
 print('connecting to mongo')
-connect(host="mongodb://localhost:27017/bank")
+import os
+url = "mongodb://localhost:27017/bank"
+if "MONGO_URL" in os.environ:
+    url = os.environ['MONGO_URL']
+
+connect(host=url, db='bank')
 
 print('mongo connected')
 
