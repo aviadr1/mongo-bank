@@ -9,6 +9,7 @@ packages = [{include = "mongo_bank"}]
 [tool.poetry.dependencies]
 python = "^3.8"
 mongoengine = "^0.27.0"
+flask = "^2.3.2"
 
 
 [build-system]
