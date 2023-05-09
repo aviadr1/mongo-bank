@@ -38,5 +38,9 @@ app = Flask(__name__)
 def hello_world():
    return 'Hello World'
 
+host = None
+if 'host' in os.environ:
+    host = os.environ['host']
+
 if __name__ == '__main__':
-   app.run()
+   app.run(host=host)
